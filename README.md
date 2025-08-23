@@ -24,28 +24,18 @@ torchlens_majority_graph.pdf: The detailed, unrolled computational graph of the 
 This project requires a few external libraries that are not included in this repository.
 
 Create and activate a virtual environment:
-
-Bash
-
 python3 -m venv venv
 source venv/bin/activate
 Install project dependencies:
-
-Bash
-
 python -m pip install numpy jax torch torchlens --break-system-packages
+
 Clone and install Tracr:
-
-Bash
-
 git clone https://github.com/google-deepmind/tracr.git
 cd tracr
 python -m pip install -e . --break-system-packages
 cd .. # Go back to your project directory
+
 Clone and install Haiku:
-
-Bash
-
 git clone https://github.com/deepmind/haiku.git
 cd haiku
 python -m pip install -e . --break-system-packages --use-pep517
@@ -55,23 +45,18 @@ cd .. # Go back to your project directory
 Follow these steps in order to reproduce the results.
 
 Compile the RASP program and generate the Tracr diagram:
-
-Bash
-
 python my_majority_program.py
+
 Export the model parameters:
-
-Bash
-
 python export_tracr_params.py
+
 Visualize with TorchLens:
-
-Bash
-
 python load_and_visualize_with_torchlens.py
 
 **Results**
 This repository contains two key visualizations that highlight the different levels of abstraction in a compiled transformer.
+file:///Users/ajayp/Desktop/Algoverse/MajorityProject/tracr_majority_graph.pdf
+file:///Users/ajayp/Desktop/Algoverse/MajorityProject/graph.gv.pdf
 
 The Tracr diagram (tracr_majority_graph.pdf) shows the high-level transformer layers, demonstrating the overall architecture derived from the RASP program. In contrast, the TorchLens diagram (torchlens_majority_graph.pdf) provides a fine-grained view of the same model's PyTorch computation graph, exposing all the sub-operations—like attention, softmax, and matrix multiplications—that implement the high-level logic.
 
@@ -79,9 +64,6 @@ Together, these visualizations offer a comprehensive look at how a high-level al
 
 **Citation**
 If you use Tracr in your work, please cite the original paper:
-
-Code snippet
-
 @article{lindner2023tracr,
   title    = {Tracr: Compiled Transformers as a Laboratory for Interpretability},
   author   = {Lindner, David and Kramár, J\'anos and Rahtz, Matthew and McGrath, Thomas and Mikulik, Vladimir},
