@@ -58,10 +58,10 @@ python load_and_visualize_with_torchlens.py
 This repository contains two key visualizations that highlight the different levels of abstraction in a compiled transformer.
 
 The Tracr diagram shows the high-level transformer layers, demonstrating the overall architecture derived from the RASP program.
-(tracr_majority_graph.pdf)
+[tracr_majority_graph.pdf](./tracr_majority_graph.pdf)
 
 In contrast, the TorchLens diagram provides a fine-grained view of the same model's PyTorch computation graph, exposing all the sub-operations—like attention, softmax, and matrix multiplications—that implement the high-level logic.
-(graph.gv.pdf)
+[graph.gv.pdf](./graph.gv.pdf)
 
 Together, these visualizations offer a comprehensive look at how a high-level algorithm is translated into a low-level, executable neural network.
 
