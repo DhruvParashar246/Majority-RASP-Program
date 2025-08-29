@@ -4,8 +4,6 @@ artifacts/
 # keep the folder in the repo
 !artifacts/.gitkeep
 
-# --- optional vendored deps ---
-# Ignore ONLY if you are not committing these repos
 Tracr/
 Haiku/
 external/Tracr/
