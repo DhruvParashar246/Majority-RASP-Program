@@ -1,2 +1,40 @@
-Haiku/
+# --- project outputs ---
+artifacts/
+
+# keep the folder in the repo
+!artifacts/.gitkeep
+
+# --- optional vendored deps ---
+# Ignore ONLY if you are not committing these repos
 Tracr/
+Haiku/
+external/Tracr/
+external/Haiku/
+
+# --- Python caches ---
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- virtualenvs ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- packaging / build ---
+dist/
+build/
+*.egg-info/
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- notebooks ---
+.ipynb_checkpoints/
