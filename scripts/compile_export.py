@@ -7,24 +7,17 @@ import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
-# Look for tracr in common locations
-CANDIDATES = [
-    REPO_ROOT / "external" / "Tracr" / "tracr",  # new suggested location
-    REPO_ROOT / "Tracr" / "tracr",               # your old location
+# Add local tracr paths if they exist; otherwise rely on pip-installed package
+for p in [
+    REPO_ROOT / "external" / "Tracr" / "tracr",  # optional vendored location
+    REPO_ROOT / "Tracr" / "tracr",               # older local layout
     REPO_ROOT / "tracr",                         # just in case
-]
-
-for p in CANDIDATES:
+]:
     if p.is_dir():
         sys.path.insert(0, str(p))
         break
-else:
-    raise ModuleNotFoundError(
-        "Couldn't find the tracr package.\n"
-        "Either clone it to external/Tracr or Tracr at the repo root, "
-        "or install it with pip (see Option B)."
-    )
 
+# Now import (works with either local path OR pip-installed package)
 from tracr.compiler import compiling
 from tracr.rasp import rasp
 
