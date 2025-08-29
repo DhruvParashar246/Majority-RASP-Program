@@ -84,17 +84,17 @@ compile_export.py auto-detects Tracr in external/Tracr/tracr or Tracr/tracr if p
 
 ## How It Works
 
-The RASP program
+### The RASP program
 
-The RASP program computes a majority score over a binary token sequence:
+*The RASP program computes a majority score over a binary token sequence:
 
-Let #1 be the number of ones in the input.
+*Let #1 be the number of ones in the input.
 
-Let L be the sequence length (excluding BOS).
+*Let L be the sequence length (excluding BOS).
 
-The program outputs 2 * #1 - L (positive ⇒ majority ones; negative ⇒ majority zeros; zero ⇒ tie).
+*The program outputs 2 * #1 - L (positive ⇒ majority ones; negative ⇒ majority zeros; zero ⇒ tie).
 
-###Compile once, compare everywhere
+### Compile once, compare everywhere
 
 1. Compile the RASP program to a Tracr transformer (Haiku/JAX backend).
 
@@ -126,15 +126,15 @@ This approach avoids:
 
 *Tokenizer ambiguity (we learn and persist the mapping once).
 
-##Troubleshooting
+## Troubleshooting
 
-###ModuleNotFoundError: No module named 'tracr'
+### ModuleNotFoundError: No module named 'tracr'
 
 *Ensure you pip-installed Tracr (see Installation), or vendor it under external/Tracr/.
 
 *compile_export.py already searches common local paths and otherwise imports the pip package.
 
-###Parity mismatch on CI
+### Parity mismatch on CI
 
 *The workflow installs Tracr via pip; local vendored code isn’t required.
 
@@ -142,7 +142,7 @@ This approach avoids:
   *import sys
   *sys.exit(0 if ok else 1)
 
-##Development Tips
+## Development Tips
 
 *Re-run compile/export whenever you change the RASP program or compiler options (MAX_SEQ_LEN, BOS/PAD, causal).
 
@@ -154,7 +154,7 @@ This approach avoids:
 
 *Protect main with the Parity check workflow required before merges.
 
-Citing Tracr
+## Citing Tracr
 
 @article{lindner2023tracr,
   title = {Tracr: Compiled Transformers as a Laboratory for Interpretability},
