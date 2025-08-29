@@ -75,3 +75,5 @@ print(f"tok2id={tok2id}, max_diff={md:.6g}, match={ok}")
 print("\n--- Sanity Check ---")
 print(f"Outputs match: {ok}")
 print(f"Max abs diff: {md:.6g}")
+
+sys.exit(0 if ok else 1)
