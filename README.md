@@ -45,24 +45,24 @@ This repo compiles a simple **RASP** program (computes majority of a binary sequ
 
 ## Quickstart
 
-# (recommended) Python 3.11 in a virtualenv
+### (recommended) Python 3.11 in a virtualenv
 python -m venv .venv && source .venv/bin/activate
 python -m pip install --upgrade pip
 
-# minimal deps
+### minimal deps
 pip install numpy "jax[cpu]" dm-haiku
 pip install --index-url https://download.pytorch.org/whl/cpu torch
 
-# install Tracr (via pip, or vendor it under external/Tracr)
+### install Tracr (via pip, or vendor it under external/Tracr)
 pip install git+https://github.com/google-deepmind/tracr.git
 
 
 Run the pipeline:
 
-# 1) Compile RASP → Tracr, save activations, export params (to artifacts/)
+### 1) Compile RASP → Tracr, save activations, export params (to artifacts/)
 python scripts/compile_export.py
 
-# 2) Verify PyTorch parity (discovers BOS/0/1/PAD mapping & saves it)
+### 2) Verify PyTorch parity (discovers BOS/0/1/PAD mapping & saves it)
 python scripts/parity_check.py
 
 Expected:
