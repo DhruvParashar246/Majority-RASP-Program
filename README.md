@@ -70,6 +70,9 @@ Expected:
 Outputs match: True
 Max abs diff: ~1e-6 (or 0)
 
+## Results
+Latest parity summary: [results/parity_summary.json](./results/parity_summary.json)
+
 ## Installation
 
 You can use either approach:
