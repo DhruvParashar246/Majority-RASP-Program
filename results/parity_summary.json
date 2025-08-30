@@ -1,0 +1,21 @@
+{
+  "match": true,
+  "max_abs_diff": 0.0,
+  "config": {
+    "d_model": 25,
+    "layers": 3,
+    "proj_dim": 24,
+    "n_heads": 2,
+    "head_dim": 12,
+    "causal": true,
+    "residual_order": "Attn->MLP",
+    "scale": "sqrt(head_dim)",
+    "pos_shift": 0
+  },
+  "token_to_id": {
+    "BOS": 2,
+    "0": 0,
+    "1": 1,
+    "PAD": 3
+  }
+}
